@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel = "stylesheet" type = "text/css" href = "/css/style.css">
+<link rel = "stylesheet" type = "text/css" href = "/css/bootstrap.min.css">
+</head>
+<body>
+    <div class = "container">
+    <h1>This is the  {{}} template</h1>
+    <p>Today is {{date}}. My name is {{name}}.</p>
+    <ol>
+    {{#profiles}}
+        <li>
+        {{name}} , from {{city}}
+        {{#profession}}
+        , I am a {{profession}}
+        {{/profession}}
+        </li>
+    {{/profiles}}
+    </ol>
+
+    <form method = "post" action = "/join">
+    <input type = "text" name = "name" placeHolder = "Name"/><br/>
+    <input type = "text" name = "city" placeHolder = "City"/><br/>
+    <input type = "text" name = "profession" placeHolder = "Profession"/><br/>
+    <input type = "submit" value = "Add Profile" />
+    </form>
+
+    <img style = "width:200px" src = "/images/LeroySelfie.jpg">
+    </div>
+</body>
+</html>
