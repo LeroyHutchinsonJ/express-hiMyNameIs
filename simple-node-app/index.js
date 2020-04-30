@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes/index');
 const app = express();
+
 //Import the path module
 const path = require('path');
 //I need this import to use the data from posts requests
@@ -19,10 +20,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
 
-//This gives us the ability to extract data from our form when the request is sent
+//This gives us the ability to extract data from our form when the request is sent, its middleware
 app.use(bodyParser.urlencoded({extended: false}));
 
-//This middleware types some nonsense to the console before every request
+//This middleware types some nonsense to the console before every request along with a timestamp in the request
 app.use((req,res,next) =>{
     console.log("First MIDDLEWARE!");
     req.timestamp = new Date().toString();
