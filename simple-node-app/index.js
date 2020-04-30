@@ -7,10 +7,7 @@ const path = require('path');
 //I need this import to use the data from posts requests
 const bodyParser = require('body-parser');
 
-
-
-
-//This tells the app to use the public directory for static assets
+//This tells the app to use the public directory for static assets, css and such
 app.use(express.static(path.join(__dirname, 'public')));
 
 //This tells the app that the views directory is to be used for rendering templates
@@ -25,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 //This middleware types some nonsense to the console before every request along with a timestamp in the request
 app.use((req,res,next) =>{
-    console.log("First MIDDLEWARE!");
+    console.log("Middleware Firing Up!");
     req.timestamp = new Date().toString();
     next();
 });
@@ -34,8 +31,6 @@ app.use((req,res,next) =>{
 
 //This should tell the app to use the route that we have imported
 app.use('/', routes);
-
-
 
 app.listen(5000);
 console.log('Server running at http://localhost:5000/');

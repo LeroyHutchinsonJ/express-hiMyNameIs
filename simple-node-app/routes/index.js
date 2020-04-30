@@ -66,5 +66,12 @@ router.get('/params/:name/:location/:occupation' ,(req, res, next) =>{
     res.json({params:params});
 });
 
+router.get('/login', (req, res, next) =>{
+    res.render("login", null);
+});
+router.post('/login', (req,res,next) =>{
+
+});
+
 //Export this file so that other files may use it
 module.exports = router;
