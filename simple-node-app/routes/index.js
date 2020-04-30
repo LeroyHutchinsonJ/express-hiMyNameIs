@@ -25,8 +25,7 @@ router.get( '/', (req, res, next) =>{
         profiles: profiles,
         user : user
     };
-
-    //For render we pass in the name of the template we are uploading, along with the data we are injecting, rn that would be null
+    //For render we pass in the name of the template we are uploading, along with the data we are injecting
     res.render('index', data);
 });
 
@@ -85,7 +84,9 @@ router.post('/login', (req,res,next) =>{
         }
         else
         {
-            res.send("Password Failed");
+            const data = {message: "Please check your username and/or password!"};
+
+            res.render('error.hjs', data);
         }
 });
 

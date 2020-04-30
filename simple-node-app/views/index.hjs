@@ -8,9 +8,9 @@
     <h1>This is the  {{}} template</h1>
     <p>Today is {{date}}</p>
     <p>
-        {{#user}}
-        <p>My name is {{user.username}}.</p>
-        {{/user}}
+        {{#user.username}}
+        My name is {{user.username}}.
+        {{/user.username}}
     </p>
     <ol>
     {{#profiles}}
