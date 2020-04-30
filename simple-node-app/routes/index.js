@@ -11,7 +11,7 @@ router.get('/', (req,res, next) => {
     res.send("Random stuff United!");
 });
 */
-
+var user = null;
 const profiles = [
     {name:'Mike', city: 'New Mexico', profession: 'Robotics Engineer'},
     {name:'Cindy', city: 'San Francisco'},
@@ -69,8 +69,22 @@ router.get('/params/:name/:location/:occupation' ,(req, res, next) =>{
 router.get('/login', (req, res, next) =>{
     res.render("login", null);
 });
-router.post('/login', (req,res,next) =>{
 
+router.post('/login', (req,res,next) =>{
+    const password = req.body.password;
+    const username = req.body.username;
+
+    //If the password is 123 login should be successful
+        if(password === "123")
+        {
+
+            res.redirect('/');
+            return
+        }
+        else
+        {
+            res.send("Password Failed");
+        }
 });
 
 //Export this file so that other files may use it
