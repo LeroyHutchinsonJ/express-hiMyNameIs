@@ -6,7 +6,12 @@
 <body>
     <div class = "container">
     <h1>This is the  {{}} template</h1>
-    <p>Today is {{date}}. My name is {{name}}.</p>
+    <p>Today is {{date}}</p>
+    <p>
+        {{#user}}
+        <p>My name is {{user.username}}.</p>
+        {{/user}}
+    </p>
     <ol>
     {{#profiles}}
         <li>

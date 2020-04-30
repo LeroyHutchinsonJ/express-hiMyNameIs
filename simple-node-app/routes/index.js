@@ -11,6 +11,7 @@ router.get('/', (req,res, next) => {
     res.send("Random stuff United!");
 });
 */
+
 var user = null;
 const profiles = [
     {name:'Mike', city: 'New Mexico', profession: 'Robotics Engineer'},
@@ -21,7 +22,8 @@ router.get( '/', (req, res, next) =>{
     var data = {
         name : "Index",
         date : req.timestamp,
-        profiles: profiles
+        profiles: profiles,
+        user : user
     };
 
     //For render we pass in the name of the template we are uploading, along with the data we are injecting, rn that would be null
@@ -77,7 +79,7 @@ router.post('/login', (req,res,next) =>{
     //If the password is 123 login should be successful
         if(password === "123")
         {
-
+            user = {username:username};
             res.redirect('/');
             return
         }
