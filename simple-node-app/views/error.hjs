@@ -8,6 +8,9 @@
     <div class = "container">
        <h1>Error</h1>
        <p>{{message}}</p>
+       <form method = "post" action = "/retry">
+       <input type = "submit" value = "Try Again"/>
+       </form>
     </div>
 </body>
 

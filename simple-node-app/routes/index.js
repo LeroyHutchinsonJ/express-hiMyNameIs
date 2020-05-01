@@ -71,6 +71,12 @@ router.get('/login', (req, res, next) =>{
     res.render("login", null);
 });
 
+
+//Make a request handler for the button
+router.post('/retry', (req, res, next) =>{
+    res.render('login.hjs', null);
+});
+
 router.post('/login', (req,res,next) =>{
     const password = req.body.password;
     const username = req.body.username;
